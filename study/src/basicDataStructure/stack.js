@@ -1,3 +1,4 @@
+//栈
 (function(){
   const domName = 'Stack'
   const initFunc = () => {
@@ -7,7 +8,7 @@
     constructor(){
       this.items = []
     }
-    //添加一个或者多个
+    //添加一个
     push(element){
       this.items.push(element)
     }

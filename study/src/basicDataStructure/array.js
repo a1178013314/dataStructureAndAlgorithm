@@ -1,4 +1,4 @@
-
+//数组
 (function(){
   let domName = 'array'
   
