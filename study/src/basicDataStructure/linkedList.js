@@ -1,7 +1,6 @@
 //链表
 (function () {
   //比较链表中元素是否相等
-  console.log(util.defaultEquals)
   class Node {
     constructor(element){
       this.element = element
@@ -114,6 +113,13 @@
     }
   }
 
+  class DoublyNode extends Node {
+    constructor(element){
+      super(element)
+    }
+  }
+  class DoublyLinkedList extends LinkedList{}
+
   const linkedList = new LinkedList()
   let domName = 'linkenList'
   const initFunc = () => {
@@ -123,6 +129,22 @@
     linkedList.push('333')
     linkedList.toString()
   }
+  const doublyInitFunc = () => {
+    console.log('doublyLinkedList')
+  }
   document.getElementById(domName).addEventListener('click', initFunc)
+  document.getElementById('doublyLinkedList').addEventListener('click', doublyInitFunc)
 
 })()
+// 链表的优点如下：
+
+// 链表能灵活地分配内存空间；
+
+// 能在 O(1) 时间内删除或者添加元素，前提是该元素的前一个元素已知，当然也取决于是单链表还是双链表，在双链表中
+// ，如果已知该元素的后一个元素，同样可以在 O(1) 时间内删除或者添加该元素。
+
+// 链表的缺点是：
+
+// 不像数组能通过下标迅速读取元素，每次都要从链表头开始一个一个读取；
+
+// 查询第 k 个元素需要 O(k) 时间。
