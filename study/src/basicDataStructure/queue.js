@@ -13,7 +13,7 @@
     }
     //像队列尾部添加数据
     enqueue(element){
-      this.items[this.count] = element
+      this.items[this.count + this.lowestCount] = element
       this.count++
     }
     //移除队列第一项
@@ -25,6 +25,9 @@
       delete this.items[this.lowestCount]
       this.lowestCount ++ 
       this.count -- 
+      if(this.isEmpty()){
+        this.lowestCount = 0
+      }
       return result
     }
     
@@ -41,7 +44,7 @@
     }
     //返回队列个数
     size(){
-      return this.count - this.lowestCount
+      return this.count 
     }
     //清空队列
     clear(){
